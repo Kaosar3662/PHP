@@ -23,8 +23,6 @@ $employees = [
 ];
 
 $grandTotal = 0;
-$lastIndex = count($employees);
-
 // $grandTotal = array_sum(array_column($employees, "SalaryPerMonth"));
 
 foreach ($employees as $employee) {
