@@ -22,6 +22,17 @@ $employees = [
   ["Name" => "Ella", "Department" => "Support", "SalaryPerMonth" => 520]
 ];
 
-foreach($employees as $employee){
-  echo $employee["Name"] . ":\n  Daily salary is: $" . floor($employee["SalaryPerMonth"]/30) . "\n" . "  Monthly salary is: $" . $employee["SalaryPerMonth"] . "\n" . "  Yearly salary is: $" . $employee["SalaryPerMonth"]*12 . "\n\n" ;
+$grandTotal = 0;
+$lastIndex = count($employees);
+
+// $grandTotal = array_sum(array_column($employees, "SalaryPerMonth"));
+
+foreach ($employees as $employee) {
+
+  global $grandTotal;
+  echo $employee["Name"] . ":\n  Daily salary is: $" . floor($employee["SalaryPerMonth"] / 30) . "\n" . "  Monthly salary is: $" . $employee["SalaryPerMonth"] . "\n" . "  Yearly salary is: $" . $employee["SalaryPerMonth"] * 12 . "\n\n";
+  $grandTotal = $grandTotal + $employee["SalaryPerMonth"];
 }
+echo "Daily Grand Total salary is: $" . $grandTotal / 30 . "\n";
+echo "Monthly Grand Total salary is: $" . $grandTotal . "\n";
+echo "Yearly Grand Total salary is: $" . $grandTotal * 12;
