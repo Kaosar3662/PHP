@@ -28,7 +28,6 @@ $grandTotal = 0;
 
 foreach ($employees as $employee) {
 
-    global $grandTotal;
     echo $employee["Name"] . ":\n  Daily salary is: $" . floor($employee["SalaryPerMonth"] / 30) . "\n" . "  Monthly salary is: $" . $employee["SalaryPerMonth"] . "\n" . "  Yearly salary is: $" . $employee["SalaryPerMonth"] * 12 . "\n\n";
     $grandTotal = $grandTotal + $employee["SalaryPerMonth"];
 }
