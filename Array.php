@@ -23,13 +23,12 @@ $employees = [
 ];
 
 $grandTotal = 0;
-// $grandTotal = array_sum(array_column($employees, "SalaryPerMonth"));
 
 foreach ($employees as $employee) {
 
   global $grandTotal;
   echo $employee["Name"] . ":\n  Daily salary is: $" . floor($employee["SalaryPerMonth"] / 30) . "\n" . "  Monthly salary is: $" . $employee["SalaryPerMonth"] . "\n" . "  Yearly salary is: $" . $employee["SalaryPerMonth"] * 12 . "\n\n";
-  $grandTotal = $grandTotal + $employee["SalaryPerMonth"];
+  $grandTotal += $employee["SalaryPerMonth"];
 }
 echo "Daily Grand Total salary is: $" . $grandTotal / 30 . "\n";
 echo "Monthly Grand Total salary is: $" . $grandTotal . "\n";
