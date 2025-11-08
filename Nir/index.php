@@ -30,14 +30,12 @@
           <input type="email" name="email" required />
           <label>Email</label>
         </div>
-      </div>
-
-      <div class="col-md-6 col-sm-12">
         <div class="styled-input" style="float: right">
           <input type="text" name="phone" required />
           <label>Phone Number</label>
         </div>
       </div>
+  
 
       <div class="col-xs-12">
         <div class="styled-input wide">
@@ -69,6 +67,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "<p><strong>Phone:</strong> $phone</p>";
   echo "<p><strong>Message:</strong> $message</p>";
   echo "</div>";
+  
+  header("Location:index.php");
+  exit();
 }
 ?>
   </div>
