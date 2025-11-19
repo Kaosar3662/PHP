@@ -17,7 +17,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0px auto 20px auto;
     }
 
     .header h2 {
@@ -34,6 +36,8 @@
 
     table {
       width: 100%;
+      max-width: 1200px;
+      margin: 0px auto;
       border-collapse: collapse;
       background: white;
     }
