@@ -105,19 +105,19 @@ $stmt->close();
 
     <div>
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($row['name']); ?> required">
+      <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($row['name']); ?>" required>
     </div>
     <div>
       <label for="email">E-mail:</label>
-      <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($row['email']); ?> required">
+      <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($row['email']); ?>" required>
     </div>
     <div>
       <label for="number">Phone:</label>
-      <input type="number" name="phone" id="number" value="<?php echo htmlspecialchars($row['phone']); ?> required">
+      <input type="number" name="phone" id="number" value="<?php echo htmlspecialchars($row['phone']); ?>" required>
     </div>
     <div>
       <label for="age">Age:</label>
-      <input type="number" name="age" id="age" value="<?php echo htmlspecialchars($row['age']); ?> required">
+      <input type="number" name="age" id="age" value="<?php echo htmlspecialchars($row['age']); ?>" required>
     </div>
     <div>
       <label for="address">Address:</label>

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   } elseif (empty($phone) ||  strlen($phone) != 11) {
     echo "Invalid phone. Must be exactly 11 digits.<br>";
   } elseif (empty($age) || strlen($age) > 3) {
-    echo "Invalid age. Must be a number up to 3 digits.<br>";
+    echo "Invalid age. Must be a number up to 2 digits.<br>";
   } elseif (empty($address) || strlen($address) > 150) {
     echo "Invalid address. Must be up to 50 characters.<br>";
   } else {
