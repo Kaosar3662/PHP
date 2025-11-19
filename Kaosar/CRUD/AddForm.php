@@ -55,12 +55,30 @@
       display: block;
       margin-bottom: 5px;
     }
+
+    .back-btn {
+      display: flex;
+      padding: 8px 14px;
+      background-color: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #5a6268;
+    }
   </style>
 </head>
 
 <body>
 
-  <form action="formHandle.php" method="POST">
+  <form action="Validation.php" method="POST">
+
+    <a href="index.php" class="back-btn">Back</a>
+    
     <div>
       <label for="name">Name:</label>
       <input type="text" name="name" id="name">

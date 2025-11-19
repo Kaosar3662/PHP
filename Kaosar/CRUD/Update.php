@@ -1,15 +1,15 @@
 <?php
-$method = $_SERVER["REQUEST_METHOD"];
+require_once("Connection.php");
 
-if ($method == "POST") {
-  $name = makeSafe($_POST["name"]);
-  $email = makeSafe($_POST["email"]);
-  $phone = makeSafe($_POST["phone"]);
-  $age = makeSafe($_POST["age"]);
-  $address = makeSafe($_POST["address"]);
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  $id = intval($_POST['id']);
+  $name = makeSafe($_POST['name']);
+  $email = makeSafe($_POST['email']);
+  $phone = makeSafe($_POST['phone']);
+  $age = makeSafe($_POST['age']);
+  $address = makeSafe($_POST['address']);
 
-
-
+  // Basic validation
   if (empty($name) || strlen($name) > 30) {
     echo "Invalid name. Must be up to 30 characters.<br>";
   } elseif (empty($email) || strlen($email) >= 50) {
@@ -21,11 +21,21 @@ if ($method == "POST") {
   } elseif (empty($address) || strlen($address) > 150) {
     echo "Invalid address. Must be up to 50 characters.<br>";
   } else {
-    echo "Form submitted successfully!<br>";
-    echo "Name: $name<br>Email: $email<br>Phone: $phone<br>Age: $age<br>Address: $address<br>";
+
+
+
+    $stmt = $connection->prepare("UPDATE $tableName SET name=?, email=?, phone=?, age=?, address=? WHERE id=?");
+    $stmt->bind_param("sssssi", $name, $email, $phone, $age, $address, $id);
+
+    if ($stmt->execute()) {
+      header("Location: index.php");
+      exit();
+    } else {
+      echo "Error updating record: " . $stmt->error;
+    }
+
+    $stmt->close();
   }
-} else {
-  exit();
 }
 
 function makeSafe($data)
