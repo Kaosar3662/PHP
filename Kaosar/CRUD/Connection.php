@@ -11,8 +11,7 @@ $tableName = "Users";
 
 $connection = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 if ($connection->connect_error) {
-  echo'Database connection failed';
-} else {
-  echo 'Database is connected';
+  error_log("Database connection failed: " . $connection->connect_error);
+  exit();
 }
-
+?>
