@@ -99,29 +99,29 @@ $stmt->close();
   <form action="Update.php" method="POST">
 
     <a href="index.php" class="back-btn">Back</a>
-    
+
     <!-- Hidden input to pass the ID -->
     <input type="hidden" name="id" value="<?php echo $id; ?>">
 
     <div>
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($row['name']); ?>">
+      <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($row['name']); ?> required">
     </div>
     <div>
       <label for="email">E-mail:</label>
-      <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($row['email']); ?>">
+      <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($row['email']); ?> required">
     </div>
     <div>
       <label for="number">Phone:</label>
-      <input type="number" name="phone" id="number" value="<?php echo htmlspecialchars($row['phone']); ?>">
+      <input type="number" name="phone" id="number" value="<?php echo htmlspecialchars($row['phone']); ?> required">
     </div>
     <div>
       <label for="age">Age:</label>
-      <input type="number" name="age" id="age" value="<?php echo htmlspecialchars($row['age']); ?>">
+      <input type="number" name="age" id="age" value="<?php echo htmlspecialchars($row['age']); ?> required">
     </div>
     <div>
       <label for="address">Address:</label>
-      <textarea name="address" id="address"><?php echo htmlspecialchars($row['address']); ?></textarea>
+      <textarea name="address" id="address" required><?php echo htmlspecialchars($row['address']); ?></textarea>
     </div>
     <button type="submit">Update</button>
   </form>

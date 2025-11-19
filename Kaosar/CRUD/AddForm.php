@@ -78,26 +78,26 @@
   <form action="Validation.php" method="POST">
 
     <a href="index.php" class="back-btn">Back</a>
-    
+
     <div>
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" required>
     </div>
     <div>
       <label for="email">E-mail:</label>
-      <input type="text" name="email" id="email">
+      <input type="text" name="email" id="email" required>
     </div>
     <div>
       <label for="number">Phone:</label>
-      <input type="number" name="phone" id="number">
+      <input type="number" name="phone" id="number" required>
     </div>
     <div>
       <label for="age">Age:</label>
-      <input type="number" name="age" id="age">
+      <input type="number" name="age" id="age" required>
     </div>
     <div>
       <label for="address">Address:</label>
-      <textarea name="address" id="address"></textarea>
+      <textarea name="address" id="address" required></textarea>
     </div>
     <button type="submit">Submit</button>
   </form>
